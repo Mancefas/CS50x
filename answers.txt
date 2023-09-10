@@ -1,0 +1,17 @@
+sort1 uses:
+bubble sort.
+
+How do you know?:
+It took the fastes time for sorted.txt, so it needed to go true items only once.
+
+sort2 uses:
+merge sort.
+
+How do you know?:
+It was fastest to sort every .txt files.
+
+sort3 uses:
+selection sort.
+
+How do you know?:
+It took longest time to sorted50000.txt file to sort.
