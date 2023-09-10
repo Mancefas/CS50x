@@ -1,0 +1,3 @@
+1. get the input with how many rows by asking the user needs. Check if it is more than 0 and less than 9. if it is - ask for input again
+2. add empty spaces to row(1 less than user asked for)
+3. add # to row, increase the amount of # depending on what row is it for.
