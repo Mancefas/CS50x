@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', () => {
+                const btns = document.querySelectorAll('button');
+                const btnInputCheck = document.querySelector('.inputCheck');
+                const input = document.querySelector('#answerInput');
+                const correctAnswer = 11;
+                const correctInputAnswer = 'database';
+                const feedback = document.querySelector('#feedback');
+                const feedbackForInput = document.querySelector('#feedbackForInput');
+                const correctText = 'Correct!';
+                const correctColor = 'green';
+                const incorrectColor = 'red';
+                const incorrectText = 'Incorrect';
+
+                btns.forEach((button) => {
+                    button.addEventListener('click', (e) => {
+                        const currentButtonClass = e.target.classList.value;
+                        const isNumericString = !isNaN(currentButtonClass)
+
+                        if (currentButtonClass == correctAnswer) {
+                            button.style.backgroundColor = correctColor;
+                            feedback.innerHTML = correctText;
+                        } else if (currentButtonClass != correctAnswer && isNumericString) {
+                            button.style.backgroundColor = incorrectColor;
+                            feedback.innerHTML = incorrectText;
+                        } else {
+                            if (input.value.toLowerCase() == correctInputAnswer) {
+                                input.style.color = correctColor;
+                                feedbackForInput.innerHTML = correctText;
+                            } else {
+                                input.style.color = incorrectColor;
+                                feedbackForInput.innerHTML = incorrectText;
+                            }
+                        }
+                    })
+                })
+
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many weeks with task there are in CS50x 2023? (weeks are 0 indexed)</h3>
+                <div class="btns-container">
+                    <button class="1">1</button>
+                    <button class="5">5</button>
+                    <button class="8">8</button>
+                    <button class="11">11</button>
+                    <button class="15">15</button>
+                    <button class="19">19</button>
+                    <button class="24">24</button>
+                    <button class="28">28</button>
+                    <button class="30">30</button>
+                </div>
+                <p id="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                    <h3>What is SQL?</h3>
+                    <input type="text" id="answerInput">
+                    <button class="inputCheck">Check your answer</button>
+                    <p id="feedbackForInput"></p>
+            </div>
+        </div>
+    </body>
+</html>
