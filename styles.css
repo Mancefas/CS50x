@@ -1,0 +1,114 @@
+body {
+    height: 100vh;
+}
+/* COMMON */
+
+.fit-content {
+    width: fit-content;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    min-height: 15vh;
+    height: fit-content;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+#logo {
+    height: 100%;
+    width: 150px;
+    aspect-ratio: 1/1;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.navigation a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* BODY */
+.main {
+    min-height: 75vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+
+/* FOOTER */
+footer {
+    display:flex;
+    height: fit-content;
+    width: 100%;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HOME PAGE */
+
+.main span {
+    color: green;
+}
+/* ABOUT PAGE */
+
+.about-ul {
+    width: 70%;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.about-ul li {
+    text-align: start;
+}
+
+/* SERVICES */
+
+.accordion {
+ width: 40%;
+ margin: auto;
+ text-align: start;
+}
+
+
+@media screen and (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation {
+        padding: 0;
+    }
+
+    .accordion {
+        width: 85%;
+    }
+
+    .about-ul {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+  }
