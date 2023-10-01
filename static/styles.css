@@ -1,0 +1,181 @@
+:root {
+    --text-white: #F8F9FA;
+    --background: #000103;
+    --background-secondary: #ebe176e9;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    min-height: 15vh;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cyclist {
+    height: 75px;
+    width: 75px;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.forecast__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 60vw;
+    min-height: 85vh;
+    margin: auto;
+    background-image: url("../static/cycler2.jpg");
+    background-size:cover;
+}
+
+.forecast__inner-container {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+}
+
+.forecast__title {
+    color: var(--text-white);
+    text-align: center;
+}
+
+.forecast__list {
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-items: center;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.forecast__list--red {
+    background: rgba( 255, 29, 29, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__list--green {
+    background: rgba( 4, 150, 22, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__list--yellow {
+    background: rgba( 248, 231, 28, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__list--blue {
+    background: rgba( 58, 98, 176, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__list--purple {
+    background: rgba( 144, 19, 254, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__list--black {
+    background: rgba( 74, 74, 74, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.forecast__form {
+    margin: 0;
+}
+
+.button--text {
+    border: none;
+    background-color: transparent;
+    color: var(--text-white);
+}
+
+.form__container {
+    width: 25vw;
+    margin: auto;
+    padding: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 10px;
+}
+
+.forecast__input-container {
+    display: flex;
+    align-items: center;
+}
+
+.forecast__input {
+    width: 3rem;
+    height: 20px;
+    border: none;
+    background-color: unset;
+    color: var(--text-white);
+}
+
+
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column-reverse;
+    }
+
+    .forecast__container {
+        width: 95vw;
+        height: fit-content;
+    }
+  }

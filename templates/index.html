@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+        {% if error %}
+            <h3 class="text-warning">Sorry there is an server error</h3>
+        {% else %}
+            <h4 class="forecast__title">{{data[0]["day"]}}</h4>
+            <h4 class="forecast__title text-capitalize">{{city}}</h4>
+
+            <div class="forecast__inner-container">
+                {% for hourForecast in data %}
+                    <div
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="{{hourForecast["info"]}}"
+                        class="forecast__list border rounded
+                                {% if hourForecast["recommendation"] %}forecast__list--{{hourForecast["recommendation"]}}{%endif%}">
+                        <p>{{hourForecast["time"]}}</p>
+                        <p class="h3">{{hourForecast["conditions"]}}</p>
+                        <p>{{hourForecast["airTemp"]}}°C</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+{% endblock %}

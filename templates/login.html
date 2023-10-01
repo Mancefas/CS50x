@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form class="form__container" action="/login"  method="post">
+
+        <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{email}}">
+        {% if emailErr %}
+            <div id="emailHelp" class="text-danger">{{emailErr}}</div>
+        {% endif %}
+        {% if userErrDb %}
+            <div id="emailHelp" class="text-danger">{{userErrDb}}</div>
+        {% endif %}
+        </div>
+
+        <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+        {% if passErr %}<div class="text-danger">Must be 4-15 characters long.</div>{% endif %}
+        {% if passErrDb %}<div class="text-danger">{{passErrDb}}</div>{% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-light">Submit</button>
+        </div>
+
+    </form>
+{% endblock %}

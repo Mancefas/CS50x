@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="forecast__inner-container">
+    {% for key, value in preferences.items() %}
+    <div class="forecast__list border rounded forecast__list--{% if key == 'low' %}red{% elif key == 'mid' %}yellow{% else %}green{%endif%}">
+        <div>00:00</div>
+        <p class="h3">☀️</p>
+        <form class="m-0" action="/admin" method="post">
+            <div class="forecast__input-container border-bottom pb-1">
+                <p>&lt;</p> <input class="forecast__input form-control" name="{{key}}" type="text" value="{{value}}" ><p>°C</p>
+            </div>
+            <button  class="button--text" type="submit" value="yes" name="submit" ><p class="h6 m-0">✔️</p></button>
+            <button class="button--text" type="submit" value="no" name="abort" ><p class="h6 m-0">✖️</p></button>
+        </form>
+    </div>
+    {% endfor %}
+    <form class="forecast__list border rounded forecast__list--black" action="/admin" method="post">
+        <input id="geoInput" name="geoInput" type="hidden">
+        <p>City</p>
+        <p class="h3">🌆</p>
+        <p class="text-capitalize">{{city}}</p>
+        <button class="border-top button--text" id="geo" type="submit">Get my city</button>
+    </form>
+</div>
+{% endblock %}
